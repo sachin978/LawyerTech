@@ -1,6 +1,6 @@
-package com.example.lawyertech.repository;
+package com.example.repository;
 
-import com.example.lawyertech.entity.User;
+import com.example.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

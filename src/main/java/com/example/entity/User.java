@@ -1,4 +1,4 @@
-package com.example.lawyertech.entity;
+package com.example.entity;
 
 import jakarta.persistence.*;
 

@@ -1,14 +1,14 @@
-package com.example.lawyertech.controller;
+package com.example.controller;
 
-import com.example.lawyertech.entity.User;
-import com.example.lawyertech.repository.UserRepository;
+import com.example.entity.User;
+import com.example.repository.UserRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/users")
 public class UserController extends AppController {
 
     private final UserRepository userRepository;
