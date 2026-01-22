@@ -22,7 +22,7 @@ public class UserController extends AppController {
     public Object addUser(@RequestBody User user) {
 
         if (userRepository.findByUsername(user.getUsername()).isPresent()) {
-            return errorResponse("User already exists");
+            return successResponse("User not found");
         }
 
         userRepository.save(user);
@@ -38,7 +38,7 @@ public class UserController extends AppController {
         Optional<User> optionalUser = userRepository.findByUsername(username);
 
         if (optionalUser.isEmpty()) {
-            return errorResponse("User not found");
+            return successResponse("User not found");
         }
 
         User user = optionalUser.get();
@@ -54,7 +54,7 @@ public class UserController extends AppController {
         Optional<User> optionalUser = userRepository.findByUsername(username);
 
         if (optionalUser.isEmpty()) {
-            return errorResponse("User not found");
+            return successResponse("User not found");
         }
 
         User user = optionalUser.get();
@@ -66,4 +66,23 @@ public class UserController extends AppController {
 
         return successResponse("User fetched successfully", data);
     }
+    @PostMapping("/login")
+    public Object login(@RequestParam String username,
+                        @RequestParam String password) {
+
+        Optional<User> optionalUser = userRepository.findByUsername(username);
+
+        if (optionalUser.isEmpty()) {
+            return errorResponse("Invalid username or password");
+        }
+
+        User user = optionalUser.get();
+
+        if (!user.getPassword().equals(password)) {
+            return errorResponse("Invalid username or password");
+        }
+
+        return successResponse("Login successful");
+    }
+
 }
