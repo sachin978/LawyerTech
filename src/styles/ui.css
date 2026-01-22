@@ -1,0 +1,526 @@
+/* =========================
+   DESIGN TOKENS
+========================= */
+:root {
+    --color-bg: #f9fafb;
+    --color-surface: #ffffff;
+    --color-border: #e5e7eb;
+    --color-text: #111827;
+    --color-muted: #6b7280;
+    --color-primary: #1e3a8a;
+    --color-primary-light: #e0e7ff;
+  
+    --radius-sm: 4px;
+    --radius-md: 6px;
+  
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-6: 24px;
+    --space-8: 32px;
+  }
+  
+  /* =========================
+     RESET + BASE
+  ========================= */
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+  }
+  
+  /* =========================
+     TYPOGRAPHY
+  ========================= */
+  h1 { font-size: 28px; margin-bottom: var(--space-4); }
+  h2 { font-size: 22px; margin-bottom: var(--space-3); }
+  h3 { font-size: 18px; margin-bottom: var(--space-2); }
+  p  { margin-bottom: var(--space-3); color: var(--color-text); }
+  
+  .text-muted { color: var(--color-muted); }
+  .text-small { font-size: 14px; }
+  
+  /* =========================
+     LAYOUT
+  ========================= */
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: var(--space-6);
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .grid {
+    display: grid;
+    gap: var(--space-4);
+  }
+  
+  .grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+  
+  /* =========================
+     SURFACE
+  ========================= */
+  .card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+  }
+  
+  .card:hover {
+    border-color: var(--color-primary);
+  }
+  
+  /* =========================
+     BUTTONS
+  ========================= */
+  .btn {
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    cursor: pointer;
+  }
+  
+  .btn-primary {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+  }
+  
+  .btn-primary:hover {
+    opacity: 0.9;
+  }
+  
+  /* =========================
+     INPUTS
+  ========================= */
+  .input {
+    padding: 8px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    width: 100%;
+  }
+  
+  /* =========================
+     TABLES
+  ========================= */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th,
+  .table td {
+    padding: var(--space-2);
+    border-bottom: 1px solid var(--color-border);
+    text-align: left;
+  }
+  
+  .table th {
+    background: var(--color-primary-light);
+  }
+  
+  /* =========================
+     RESPONSIVE
+  ========================= */
+  @media (max-width: 768px) {
+    .container {
+      padding: var(--space-4);
+    }
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-3) var(--space-6);
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  .header-left {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .brand {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--color-primary);
+  }
+  
+  .brand-tag {
+    font-size: 12px;
+    color: var(--color-muted);
+  }
+  
+  .header-center {
+    flex: 1;
+    padding: 0 var(--space-6);
+  }
+  
+  .search-input {
+    max-width: 520px;
+  }
+  
+  .header-right {
+    display: flex;
+    gap: var(--space-3);
+  }
+  
+  .btn-ghost {
+    background: transparent;
+    border: none;
+    color: var(--color-text);
+  }
+  /* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+    width: 260px;
+    background: var(--color-surface);
+    border-right: 1px solid var(--color-border);
+    padding: var(--space-4);
+    min-height: calc(100vh - 64px);
+  }
+  
+  .sidebar-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-muted);
+    margin-top: var(--space-4);
+    margin-bottom: var(--space-2);
+    text-transform: uppercase;
+  }
+  
+  .sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar-list li {
+    padding: 8px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .sidebar-list li:hover {
+    background: var(--color-primary-light);
+  }
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    margin-top: var(--space-8);
+    padding: var(--space-6);
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-6);
+  }
+  
+  .footer-title {
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+  }
+  
+  .footer-bottom {
+    margin-top: var(--space-6);
+    font-size: 12px;
+    color: var(--color-muted);
+    text-align: center;
+  }
+    
+  /* =========================
+   ARTICLE PAGE – MODERN
+========================= */
+.article-page {
+    max-width: 900px;
+  }
+  
+  /* Hero */
+  .article-hero {
+    margin-bottom: 40px;
+  }
+  
+  .article-category {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-primary);
+    background: var(--color-primary-light);
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+  
+  .article-title {
+    font-size: 34px;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+  
+  .article-subtitle {
+    font-size: 16px;
+    color: var(--color-muted);
+    margin-bottom: 20px;
+  }
+  
+  .article-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: var(--color-muted);
+  }
+  
+  /* Content */
+  .article-content {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 32px;
+  }
+  
+  .article-paragraph {
+    font-size: 16px;
+    margin-bottom: 18px;
+  }
+  
+  .article-content h2 {
+    margin-top: 32px;
+    margin-bottom: 12px;
+  }
+  
+  .article-quote {
+    background: #f3f4f6;
+    border-left: 4px solid var(--color-primary);
+    padding: 16px;
+    font-style: italic;
+    margin: 20px 0;
+  }
+  
+  .article-list {
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .article-list li {
+    margin-bottom: 8px;
+  }
+  
+  /* References */
+  .article-references {
+    margin-top: 40px;
+  }
+  
+  .article-references ul {
+    padding-left: 20px;
+  }
+  
+  /* Disclaimer */
+  .article-disclaimer {
+    margin-top: 32px;
+    font-size: 13px;
+    color: var(--color-muted);
+    border-top: 1px solid var(--color-border);
+    padding-top: 16px;
+  }
+
+  /* =========================
+   CASE LAW PAGE – MODERN
+========================= */
+.case-page {
+    max-width: 1000px;
+  }
+  
+  /* Hero */
+  .case-hero {
+    margin-bottom: 32px;
+  }
+  
+  .case-badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-primary);
+    background: var(--color-primary-light);
+    padding: 4px 10px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+  }
+  
+  .case-title {
+    font-size: 30px;
+    margin-bottom: 8px;
+  }
+  
+  .case-citation {
+    color: var(--color-muted);
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  
+  .case-meta {
+    display: flex;
+    gap: 24px;
+    font-size: 14px;
+    color: var(--color-muted);
+  }
+  
+  /* Content */
+  .case-content {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 28px;
+  }
+  
+  .case-section {
+    margin-bottom: 28px;
+  }
+  
+  .case-section h2 {
+    margin-bottom: 10px;
+  }
+  
+  .case-quote {
+    background: #f3f4f6;
+    border-left: 4px solid var(--color-primary);
+    padding: 16px;
+    font-style: italic;
+  }
+  
+  /* References */
+  .case-references {
+    margin-top: 40px;
+  }
+  
+  /* Disclaimer */
+  .case-disclaimer {
+    margin-top: 32px;
+    font-size: 13px;
+    color: var(--color-muted);
+    border-top: 1px solid var(--color-border);
+    padding-top: 16px;
+  }
+  
+  .header-visual {
+    background: linear-gradient(90deg, #eef2ff, #ffffff);
+  }
+  
+  .brand-wrap {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  
+  .brand-icon {
+    width: 36px;
+    height: 36px;
+  }
+  .visual-hero {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+    align-items: center;
+    background: linear-gradient(135deg, #eef2ff, #ffffff);
+    padding: 40px;
+    border-radius: 12px;
+  }
+  
+  .hero-illustration {
+    max-width: 260px;
+  }
+  
+  .feature-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+  }
+  
+  .feature-card {
+    text-align: center;
+  }
+  
+  .feature-card img {
+    width: 48px;
+    margin-bottom: 8px;
+  }
+  /* =========================
+   HOME HERO BACKGROUND
+========================= */
+.home-hero {
+    position: relative;
+    background-image:
+      linear-gradient(
+        to right,
+        rgba(15, 23, 42, 0.85),
+        rgba(15, 23, 42, 0.55)
+      ),
+      url("https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?q=80&w=2000");
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    padding: 80px 60px;
+    color: #ffffff;
+    margin-bottom: 48px;
+  }
+  
+  .home-hero h1 {
+    font-size: 42px;
+    max-width: 700px;
+    margin-bottom: 16px;
+  }
+  
+  .home-hero p {
+    font-size: 18px;
+    max-width: 620px;
+    color: #e5e7eb;
+  }
+  
+  .home-hero .hero-actions {
+    margin-top: 28px;
+    display: flex;
+    gap: 16px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .home-hero {
+      padding: 48px 24px;
+    }
+  
+    .home-hero h1 {
+      font-size: 30px;
+    }
+  }
+  
+    

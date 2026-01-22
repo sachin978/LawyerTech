@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    font-family: "Inter", system-ui, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1b2a4e);
+    min-height: 100vh;
+  }
+  
+  /* Layout */
+  .auth-container {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  /* LEFT – Branding */
+  .auth-left {
+    flex: 1;
+    padding: 80px;
+    color: #e5e7eb;
+    background: linear-gradient(
+        rgba(15, 23, 42, 0.9),
+        rgba(15, 23, 42, 0.9)
+      ),
+      url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f")
+        center / cover no-repeat;
+  }
+  
+  .auth-left h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #f5b700;
+  }
+  
+  .auth-left p {
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 420px;
+    color: #cbd5f5;
+  }
+  
+  /* RIGHT – Auth Card */
+  .auth-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .auth-card {
+    background: #ffffff;
+    width: 400px;
+    padding: 36px;
+    border-radius: 16px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+    animation: fadeSlideIn 0.6s ease;
+  }
+  
+  /* Toggle Buttons */
+  .auth-toggle {
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    background: #f1f5f9;
+  }
+  
+  .auth-toggle button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    background: transparent;
+    color: #334155;
+    transition: all 0.3s ease;
+  }
+  
+  .auth-toggle button:hover {
+    background: #e2e8f0;
+  }
+  
+  .auth-toggle .active {
+    background: #1b2a4e;
+    color: #f5b700;
+  }
+  
+  /* Form */
+  form input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 14px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    font-size: 14px;
+    transition: border 0.2s;
+  }
+  
+  form input:focus {
+    outline: none;
+    border-color: #1b2a4e;
+  }
+  
+  /* Primary Button */
+  form button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #1b2a4e, #243b73);
+    color: #f5b700;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  
+  form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(27, 42, 78, 0.4);
+  }
+  
+  /* Messages */
+  .message {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #dc2626;
+  }
+  
